@@ -1,0 +1,70 @@
+.story {
+  width: 75%;
+  margin: 2rem auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: $color-white;
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $defulte-font-size;
+  transform: skew(-12deg);
+  @include Media (tap-port){
+    width: 100%;
+    padding: 4rem;
+    padding-left: 6rem;
+  }
+  @include Media (phone){
+    transform: skew(0);
+  }
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    
+    float: left;
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem);
+    transform: skew(12deg);
+    position: relative;
+    @include Media (phone){
+      transform: skew(0);
+    }
+  }
+  &__img {
+   
+    height: 100%;
+    transform: scale(1.2);
+    transition: all .5s;
+    @include Media (phone){
+      transform: skew(0);
+    }
+  }
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    font-size: 2rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .2s;
+
+  }
+  &__text {
+    transform: skew(12deg);
+    margin-left: 20rem;
+   
+  }
+  &:hover  &__caption {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+
+  }
+  &:hover  &__img {
+    transform: scale(1);
+    filter: blur(.2rem) brightness(90%);
+ 
+
+  }
+}

@@ -1,0 +1,35 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  // this difines whate 1 rem means
+  font-size: 62.5%;
+  //900px
+  @include Media (desktop){
+    font-size: 75%; //
+
+  }
+  @include Media (tap-land){
+    font-size: 56.25%;
+  }//1200
+  @include Media (tap-port){
+    font-size: 50%;
+  }
+ 
+}
+body {
+  
+  box-sizing: border-box;
+  padding: 3rem;
+  @include Media (tap-port){
+    padding: 0;
+  }
+}
+::selection {
+  background-color: aqua;
+  color: black;
+}
